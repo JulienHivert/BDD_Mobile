@@ -39,7 +39,8 @@ class ListViewController: UIViewController {
         let okAction = UIAlertAction(title: "Ok", style: .default){ (action) in
             //let item = Item(text: alertController.textFields![0].text!)
             let item = Item(context : DataManager.sharedInstance.persistentContainer.viewContext )
-            
+            item.name = alertController.textFields![0].text!
+            item.checked = false
             DataManager.sharedInstance.cachedItems.append(item)
             DataManager.sharedInstance.saveListItems()
             self.resetSearchBar()
