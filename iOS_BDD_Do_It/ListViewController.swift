@@ -16,6 +16,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var items2 = Array<Item>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //createItem()
@@ -24,11 +25,6 @@ class ListViewController: UIViewController {
         searchBar.placeholder = "Search Item"
         
     }
-    //    func createItem(){
-    //        for item in items{
-    //            items2.append(Item(text: item))
-    //        }
-    //    }
     @IBAction func addAction(_ sender: Any) {
         let alertController =  UIAlertController(title: "Doit", message: "New item", preferredStyle: .alert)
         
@@ -58,7 +54,7 @@ class ListViewController: UIViewController {
     
     func resetSearchBar(){
         searchBar.text = ""
-        items2 = DataManager.sharedInstance.cachedItems
+        items2 = DataManager.sharedInstance.cachedItems 
     }
 }
 extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
@@ -66,11 +62,15 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items2.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListViewCellIdentifier", for: indexPath)
         let item = items2[indexPath.row]
         cell.textLabel?.text = item.name
         cell.accessoryType = (item.checked) ? .checkmark : .none
+        
+        let badge = cell.viewWithTag(3)
+        badge!.layer.cornerRadius = 5
         return cell
     }
     
@@ -80,9 +80,11 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
         DataManager.sharedInstance.cachedItems.insert(sourceItem, at: destinationIndexPath.row)
         DataManager.sharedInstance.saveListItems()
     }
+    
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return searchBarIsEmpty()
     }
+    
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -98,15 +100,12 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
         return DataManager.sharedInstance.cachedItems.count > 1
     }
     
+    //Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let itemIndex = DataManager.sharedInstance.cachedItems.index(where:{ $0 === items2[indexPath.item]})!
-        items2.remove(at: indexPath.item)
-        DataManager.sharedInstance.cachedItems.remove(at: itemIndex)
+        let item = items2.remove(at: indexPath.item)
+        DataManager.sharedInstance.delete(item: item)
         
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        DataManager.sharedInstance.saveListItems()
-        
-        
     }
     
     //MARK: UISearchResultsUpdating
