@@ -37,7 +37,8 @@ class ListViewController: UIViewController {
         }
         
         let okAction = UIAlertAction(title: "Ok", style: .default){ (action) in
-            let item = Item(text: alertController.textFields![0].text!)
+            //let item = Item(text: alertController.textFields![0].text!)
+            let item = Item(context : DataManager.sharedInstance.persistentContainer.viewContext )
             
             DataManager.sharedInstance.cachedItems.append(item)
             DataManager.sharedInstance.saveListItems()
@@ -67,7 +68,7 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListViewCellIdentifier", for: indexPath)
         let item = items2[indexPath.row]
-        cell.textLabel?.text = item.text
+        cell.textLabel?.text = item.name
         cell.accessoryType = (item.checked) ? .checkmark : .none
         return cell
     }

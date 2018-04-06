@@ -6,13 +6,13 @@
 //  Copyright © 2018 iem. All rights reserved.
 //
 import Foundation
-
-class Item : Codable{
-    var text: String
-    var checked = false
-    
-    init(text: String) {
-        self.text = text
-    }
-    
-}
+//class Item : Codable{
+//    var text: String
+//    var checked = false
+//
+//    init(text: String) {
+//        self.text = text
+//    }
+//
+//}
+//
