@@ -37,7 +37,10 @@ class ListViewController: UIViewController {
         }
         
         let okAction = UIAlertAction(title: "Ok", style: .default){ (action) in
-            //let item = Item(text: alertController.textFields![0].text!)
+            let textField = alertController.textFields![0]
+            
+            if textField.text != "" {
+            
             let item = Item(context : DataManager.sharedInstance.persistentContainer.viewContext )
             item.name = alertController.textFields![0].text!
             item.checked = false
@@ -45,11 +48,13 @@ class ListViewController: UIViewController {
             DataManager.sharedInstance.saveListItems()
             self.resetSearchBar()
             self.tableView.reloadData()
+            }
+            
         }
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
-    }
     
+}
     @IBAction func editAction(_ sender: Any) {
         //        let editButton = sender as! UIBarButtonItem
         //        editButton.se
