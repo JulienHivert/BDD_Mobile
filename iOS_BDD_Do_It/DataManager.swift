@@ -8,7 +8,11 @@
 
 import Foundation
 import CoreData
+
 class DataManager {
+    var context : NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
     static let sharedInstance = DataManager()
     
     var documentDirectory: URL {
@@ -31,15 +35,45 @@ class DataManager {
         })
     }
     
+    func delete(item: Item) {
+        if let index = cachedItems.index(where:{ (anItem) -> Bool in
+            return (anItem === item)
+        }) {
+            cachedItems.remove(at: index)
+        }
+        context.delete(item)
+        saveListItems()
+    }
+    
     func saveListItems(){
+        saveContext()
+    }
+    
+    func loadItems(with text: String) -> [Item] {
+        var items: [Item]! = nil
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         
+        if text.count > 0 {
+            let predicate = NSPredicate(format: "name contains[cd] %", text)
+            fetchRequest.predicate = predicate
+        }
+        do {
+            items = try context.fetch(fetchRequest)
+        } catch {
+            debugPrint("Could not load the items from CoreData")
+        }
+        return items
     }
     
     func loadListItems(){
-    
-            
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            cachedItems = try context.fetch(fetchRequest)
+        } catch {
+            debugPrint("Could not load the items from CoreData")
         }
- 
+    }
+    
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -85,4 +119,4 @@ class DataManager {
         }
     }
     
-}   
+}

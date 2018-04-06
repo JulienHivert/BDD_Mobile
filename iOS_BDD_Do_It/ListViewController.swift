@@ -14,6 +14,7 @@ class ListViewController: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var imageView: UIImageView!
     
     var items2 = Array<Item>()
     override func viewDidLoad() {
@@ -71,6 +72,11 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
         let item = items2[indexPath.row]
         cell.textLabel?.text = item.name
         cell.accessoryType = (item.checked) ? .checkmark : .none
+        let image = cell.imageView
+        
+        let badge = cell.viewWithTag(3)
+        badge!.layer.cornerRadius = 5
+        
         return cell
     }
     

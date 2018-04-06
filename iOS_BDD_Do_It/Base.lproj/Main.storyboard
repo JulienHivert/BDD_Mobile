@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M7S-CB-OW1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M7S-CB-OW1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--navBar-->
+        <!--Do It-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="iOS_BDD_Do_It" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w1B-7f-MEe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w1B-7f-MEe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="HY6-mC-OyH">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -30,12 +30,30 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListViewCellIdentifier" id="RRu-6X-8Hi">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListViewCellIdentifier" rowHeight="40" id="RRu-6X-8Hi">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RRu-6X-8Hi" id="stU-8l-Nz1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhI-IP-Th6">
+                                                    <rect key="frame" x="15" y="3" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEI-qT-1yv">
+                                                    <rect key="frame" x="55" y="3" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fjb-w4-fPG">
+                                                    <rect key="frame" x="0.0" y="14" width="10" height="10"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" name="green"/>
+                                                </view>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -46,9 +64,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w1B-7f-MEe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="60t-Af-gNc"/>
+                            <constraint firstItem="w1B-7f-MEe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8oT-pf-wiK"/>
+                            <constraint firstItem="w1B-7f-MEe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rkk-39-zH8"/>
+                            <constraint firstItem="w1B-7f-MEe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jA9-kE-PdG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="navBar" id="GOf-eS-Rps">
+                    <navigationItem key="navigationItem" title="Do It" id="GOf-eS-Rps">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Qpj-yp-zc3">
                             <connections>
                                 <action selector="editAction:" destination="BYZ-38-t0r" id="nVf-q2-pIA"/>
@@ -88,4 +112,9 @@
             <point key="canvasLocation" x="-91.200000000000003" y="117.84107946026987"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="green">
+            <color red="0.21960784310000001" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
