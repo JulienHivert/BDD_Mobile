@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B881D7982077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B881D7962077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld */; };
 		B8F191AE206E1FE80089D1C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191AD206E1FE80089D1C3 /* AppDelegate.swift */; };
 		B8F191B0206E1FE80089D1C3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191AF206E1FE80089D1C3 /* ListViewController.swift */; };
 		B8F191B3206E1FE90089D1C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F191B1206E1FE90089D1C3 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B881D7972077525E0075F04B /* iOS_BDD_Do_it.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_BDD_Do_it.xcdatamodel; sourceTree = "<group>"; };
 		B8F191AA206E1FE80089D1C3 /* iOS_BDD_Do_It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_BDD_Do_It.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F191AD206E1FE80089D1C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F191AF206E1FE80089D1C3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				B8F191B9206E1FE90089D1C3 /* Info.plist */,
 				B8F191BF206E243D0089D1C3 /* ListTableViewCell.swift */,
 				B8F191C1206E31820089D1C3 /* Item.swift */,
+				B881D7962077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld */,
 			);
 			path = iOS_BDD_Do_It;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B881D7982077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld in Sources */,
 				B8F191C2206E31820089D1C3 /* Item.swift in Sources */,
 				B8F191C4206E87C60089D1C3 /* DataManager.swift in Sources */,
 				B8F191B0206E1FE80089D1C3 /* ListViewController.swift in Sources */,
@@ -332,6 +336,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B881D7962077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B881D7972077525E0075F04B /* iOS_BDD_Do_it.xcdatamodel */,
+			);
+			currentVersion = B881D7972077525E0075F04B /* iOS_BDD_Do_it.xcdatamodel */;
+			path = iOS_BDD_Do_it.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B8F191A2206E1FE80089D1C3 /* Project object */;
 }
