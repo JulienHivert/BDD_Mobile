@@ -19,6 +19,10 @@ class DataManager {
         return documentDirectory.appendingPathComponent("lists").appendingPathExtension("json")
     }
     
+    var context: NSManagedObjectContext{
+        return persistentContainer.viewContext
+    }
+    
     var cachedItems = Array<Item>()
     
     private init() {
@@ -32,13 +36,19 @@ class DataManager {
     }
     
     func saveListItems(){
-        
+        saveContext()
     }
     
     func loadListItems(){
     
-            
+        let fetchRequest : NSFetchRequest<Item> = Item.fetchRequest()
+        
+        do{
+            cachedItems = try context.fetch(fetchRequest)
+        }catch{
+            debugPrint("could not load the items from CoreData")
         }
+}
  
     // MARK: - Core Data stack
     
