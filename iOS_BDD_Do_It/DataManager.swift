@@ -35,20 +35,36 @@ class DataManager {
         })
     }
     
+    func delete(item : Item){
+        context.delete(item)
+        if let  index = cachedItems.index(where : { (anItem) -> Bool in
+            return(anItem === item)
+        }){
+            cachedItems.remove(at: index)
+        }
+        context.delete(item)
+        saveListItems()
+    }
+    
     func saveListItems(){
         saveContext()
     }
     
-    func loadListItems(){
-    
+    func loadListItems( with text: String? = ""){
+//        var items : [Item]! = nil
         let fetchRequest : NSFetchRequest<Item> = Item.fetchRequest()
         
+        if text != nil, text!.count > 0 {
+            let predicate = NSPredicate(format : "name containers[cd] %@", text!)
+            fetchRequest.predicate = predicate
+    }
         do{
             cachedItems = try context.fetch(fetchRequest)
         }catch{
             debugPrint("could not load the items from CoreData")
         }
-}
+//        return items
+    }
  
     // MARK: - Core Data stack
     

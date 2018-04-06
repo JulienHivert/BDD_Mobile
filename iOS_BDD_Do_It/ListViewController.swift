@@ -46,6 +46,7 @@ class ListViewController: UIViewController {
             item.checked = false
             DataManager.sharedInstance.cachedItems.append(item)
             DataManager.sharedInstance.saveListItems()
+            
             self.resetSearchBar()
             self.tableView.reloadData()
             }
