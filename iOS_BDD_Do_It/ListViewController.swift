@@ -83,6 +83,9 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
         let item = items2[indexPath.row]
         cell.textLabel?.text = item.name
         cell.accessoryType = (item.checked) ? .checkmark : .none
+        
+        let badge = cell.viewWithTag(3)
+        badge!.layer.cornerRadius = 5
         return cell
     }
     
