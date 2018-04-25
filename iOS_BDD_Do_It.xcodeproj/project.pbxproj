@@ -18,6 +18,7 @@
 		B8F191C0206E243D0089D1C3 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191BF206E243D0089D1C3 /* ListTableViewCell.swift */; };
 		B8F191C2206E31820089D1C3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191C1206E31820089D1C3 /* Item.swift */; };
 		B8F191C4206E87C60089D1C3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191C3206E87C60089D1C3 /* DataManager.swift */; };
+		EBE76E6F209078FE000BF99B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE76E6E209078FE000BF99B /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B8F191BF206E243D0089D1C3 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		B8F191C1206E31820089D1C3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B8F191C3206E87C60089D1C3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		EBE76E6E209078FE000BF99B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				B881D7962077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld */,
 				B8247DDD20779CFE004FD6FF /* categoryController.swift */,
 				B89CCF092077B4A00073A0A6 /* UIButtonExtension.swift */,
+				EBE76E6E209078FE000BF99B /* CustomCell.swift */,
 			);
 			path = iOS_BDD_Do_It;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				B89CCF0A2077B4A00073A0A6 /* UIButtonExtension.swift in Sources */,
 				B8F191C2206E31820089D1C3 /* Item.swift in Sources */,
 				B8F191C4206E87C60089D1C3 /* DataManager.swift in Sources */,
+				EBE76E6F209078FE000BF99B /* CustomCell.swift in Sources */,
 				B8F191B0206E1FE80089D1C3 /* ListViewController.swift in Sources */,
 				B8F191AE206E1FE80089D1C3 /* AppDelegate.swift in Sources */,
 				B8247DDE20779CFE004FD6FF /* categoryController.swift in Sources */,

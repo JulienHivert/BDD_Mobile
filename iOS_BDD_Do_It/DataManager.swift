@@ -10,6 +10,8 @@ import Foundation
 import CoreData
 class DataManager {
     static let sharedInstance = DataManager()
+    lazy var cachedItems = Array<Item>()
+    //Demande de William pour rendre le code plus maintenable et réutilisable.
     
     var documentDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -23,7 +25,7 @@ class DataManager {
         return persistentContainer.viewContext
     }
     
-    var cachedItems = Array<Item>()
+    //var cachedItems = Array<Item>()
     
     private init() {
         loadListItems()

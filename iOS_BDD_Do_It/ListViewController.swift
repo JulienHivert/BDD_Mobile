@@ -39,6 +39,9 @@ class ListViewController: UIViewController {
             textField.placeholder = "Name"
         }
         
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (action) in
+        }
+        
         let okAction = UIAlertAction(title: "Ok", style: .default){ (action) in
             let textField = alertController.textFields![0]
             
@@ -55,8 +58,11 @@ class ListViewController: UIViewController {
             self.tableView.reloadData()
             }
             
+        
+            
         }
         alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
         //Placer l'ouverture de la popup içi
         
         present(alertController, animated: true, completion: nil)
@@ -79,10 +85,10 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
         return items2.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListViewCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListViewCellIdentifier", for: indexPath) as! CustomCell
         let item = items2[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.accessoryType = (item.checked) ? .checkmark : .none
+        cell.nameCell?.text = item.name
+        cell.descCell?.text = item.desc
         
         let badge = cell.viewWithTag(3)
         badge!.layer.cornerRadius = 5

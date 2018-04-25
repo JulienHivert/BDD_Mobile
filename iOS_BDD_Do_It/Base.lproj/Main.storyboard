@@ -31,14 +31,14 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListViewCellIdentifier" id="RRu-6X-8Hi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListViewCellIdentifier" id="RRu-6X-8Hi" customClass="CustomCell" customModule="iOS_BDD_Do_It" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RRu-6X-8Hi" id="stU-8l-Nz1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view tag="3" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0lI-Aj-5Ej">
+                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lI-Aj-5Ej">
                                                     <rect key="frame" x="3" y="16" width="10" height="10"/>
                                                     <color key="backgroundColor" name="green"/>
                                                     <constraints>
@@ -46,20 +46,39 @@
                                                         <constraint firstAttribute="width" constant="10" id="Sja-t4-B7a"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="9KA-tj-MxV">
-                                                    <rect key="frame" x="172" y="5" width="31" height="33"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="9KA-tj-MxV">
+                                                    <rect key="frame" x="21" y="5" width="31" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="33" id="Z3b-OC-MPW"/>
                                                         <constraint firstAttribute="width" constant="31" id="ibx-0T-OHQ"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQI-JJ-Txp">
+                                                    <rect key="frame" x="84" y="22" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sei-Hb-uH0">
+                                                    <rect key="frame" x="84" y="0.0" width="52" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="9KA-tj-MxV" firstAttribute="leading" secondItem="0lI-Aj-5Ej" secondAttribute="trailing" constant="14" id="7tn-HF-gHs"/>
                                                 <constraint firstItem="0lI-Aj-5Ej" firstAttribute="leading" secondItem="stU-8l-Nz1" secondAttribute="leading" constant="3" id="Q9M-P8-wER"/>
-                                                <constraint firstItem="9KA-tj-MxV" firstAttribute="leading" secondItem="0lI-Aj-5Ej" secondAttribute="trailing" constant="159" id="lYx-6X-hyO"/>
+                                                <constraint firstItem="0lI-Aj-5Ej" firstAttribute="centerY" secondItem="stU-8l-Nz1" secondAttribute="centerY" id="SkU-80-uZj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descCell" destination="pQI-JJ-Txp" id="DG4-Xs-t13"/>
+                                            <outlet property="imageCell" destination="9KA-tj-MxV" id="QrG-HS-8fK"/>
+                                            <outlet property="nameCell" destination="Sei-Hb-uH0" id="BqY-tJ-hwo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
