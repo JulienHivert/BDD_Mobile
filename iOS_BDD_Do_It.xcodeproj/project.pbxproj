@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8247DDE20779CFE004FD6FF /* categoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8247DDD20779CFE004FD6FF /* categoryController.swift */; };
 		B881D7982077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B881D7962077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld */; };
+		B89CCF0A2077B4A00073A0A6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89CCF092077B4A00073A0A6 /* UIButtonExtension.swift */; };
 		B8F191AE206E1FE80089D1C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191AD206E1FE80089D1C3 /* AppDelegate.swift */; };
 		B8F191B0206E1FE80089D1C3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191AF206E1FE80089D1C3 /* ListViewController.swift */; };
 		B8F191B3206E1FE90089D1C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F191B1206E1FE90089D1C3 /* Main.storyboard */; };
@@ -16,10 +18,13 @@
 		B8F191C0206E243D0089D1C3 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191BF206E243D0089D1C3 /* ListTableViewCell.swift */; };
 		B8F191C2206E31820089D1C3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191C1206E31820089D1C3 /* Item.swift */; };
 		B8F191C4206E87C60089D1C3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F191C3206E87C60089D1C3 /* DataManager.swift */; };
+		EBE76E6F209078FE000BF99B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE76E6E209078FE000BF99B /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8247DDD20779CFE004FD6FF /* categoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryController.swift; sourceTree = "<group>"; };
 		B881D7972077525E0075F04B /* iOS_BDD_Do_it.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_BDD_Do_it.xcdatamodel; sourceTree = "<group>"; };
+		B89CCF092077B4A00073A0A6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		B8F191AA206E1FE80089D1C3 /* iOS_BDD_Do_It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_BDD_Do_It.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F191AD206E1FE80089D1C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F191AF206E1FE80089D1C3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +35,7 @@
 		B8F191BF206E243D0089D1C3 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		B8F191C1206E31820089D1C3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B8F191C3206E87C60089D1C3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		EBE76E6E209078FE000BF99B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				B8F191BF206E243D0089D1C3 /* ListTableViewCell.swift */,
 				B8F191C1206E31820089D1C3 /* Item.swift */,
 				B881D7962077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld */,
+				B8247DDD20779CFE004FD6FF /* categoryController.swift */,
+				B89CCF092077B4A00073A0A6 /* UIButtonExtension.swift */,
+				EBE76E6E209078FE000BF99B /* CustomCell.swift */,
 			);
 			path = iOS_BDD_Do_It;
 			sourceTree = "<group>";
@@ -103,7 +112,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = iem;
 				TargetAttributes = {
 					B8F191A9206E1FE80089D1C3 = {
@@ -149,10 +158,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B881D7982077525E0075F04B /* iOS_BDD_Do_it.xcdatamodeld in Sources */,
+				B89CCF0A2077B4A00073A0A6 /* UIButtonExtension.swift in Sources */,
 				B8F191C2206E31820089D1C3 /* Item.swift in Sources */,
 				B8F191C4206E87C60089D1C3 /* DataManager.swift in Sources */,
+				EBE76E6F209078FE000BF99B /* CustomCell.swift in Sources */,
 				B8F191B0206E1FE80089D1C3 /* ListViewController.swift in Sources */,
 				B8F191AE206E1FE80089D1C3 /* AppDelegate.swift in Sources */,
+				B8247DDE20779CFE004FD6FF /* categoryController.swift in Sources */,
 				B8F191C0206E243D0089D1C3 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +205,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -200,6 +213,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -250,6 +264,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -257,6 +272,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

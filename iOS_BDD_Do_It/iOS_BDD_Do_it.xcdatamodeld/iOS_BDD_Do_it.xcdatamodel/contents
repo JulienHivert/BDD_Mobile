@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<<<<<<< HEAD
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="items" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Item" inverseName="categories" inverseEntity="Item" syncable="YES"/>
+=======
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Categorie" representedClassName="Categorie" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="items" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Item" inverseName="caterogire" inverseEntity="Item" syncable="YES"/>
+>>>>>>> 71d0b521902a85d6779655b4368cb079cd7d740f
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -14,7 +23,9 @@
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+<<<<<<< HEAD
         <relationship name="categories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="items" inverseEntity="Category" syncable="YES"/>
         <relationship name="image" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Image" inverseName="item" inverseEntity="Image" syncable="YES"/>
     </entity>
@@ -22,5 +33,14 @@
         <element name="Item" positionX="-63" positionY="-135" width="128" height="103"/>
         <element name="Category" positionX="-72" positionY="111" width="128" height="105"/>
         <element name="Image" positionX="241" positionY="45" width="128" height="103"/>
+=======
+        <relationship name="caterogire" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Categorie" inverseName="items" inverseEntity="Categorie" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Image" inverseName="item" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Categorie" positionX="-54" positionY="9" width="128" height="105"/>
+        <element name="Image" positionX="-470" positionY="-405" width="128" height="103"/>
+        <element name="Item" positionX="-173" positionY="-432" width="128" height="120"/>
+>>>>>>> 71d0b521902a85d6779655b4368cb079cd7d740f
     </elements>
 </model>

@@ -5,15 +5,12 @@
 //  Created by iem on 30/03/2018.
 //  Copyright © 2018 iem. All rights reserved.
 //
-
 import Foundation
 import CoreData
-
 class DataManager {
-    var context : NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
     static let sharedInstance = DataManager()
+    lazy var cachedItems = Array<Item>()
+    //Demande de William pour rendre le code plus maintenable et réutilisable.
     
     var documentDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -23,7 +20,11 @@ class DataManager {
         return documentDirectory.appendingPathComponent("lists").appendingPathExtension("json")
     }
     
-    var cachedItems = Array<Item>()
+    var context: NSManagedObjectContext{
+        return persistentContainer.viewContext
+    }
+    
+    //var cachedItems = Array<Item>()
     
     private init() {
         loadListItems()
@@ -35,10 +36,11 @@ class DataManager {
         })
     }
     
-    func delete(item: Item) {
-        if let index = cachedItems.index(where:{ (anItem) -> Bool in
-            return (anItem === item)
-        }) {
+    func delete(item : Item){
+        context.delete(item)
+        if let  index = cachedItems.index(where : { (anItem) -> Bool in
+            return(anItem === item)
+        }){
             cachedItems.remove(at: index)
         }
         context.delete(item)
@@ -49,29 +51,20 @@ class DataManager {
         saveContext()
     }
     
-    func loadItems(with text: String) -> [Item] {
-        var items: [Item]! = nil
-        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+    func loadListItems( with text: String? = ""){
+        //        var items : [Item]! = nil
+        let fetchRequest : NSFetchRequest<Item> = Item.fetchRequest()
         
-        if text.count > 0 {
-            let predicate = NSPredicate(format: "name contains[cd] %", text)
+        if text != nil, text!.count > 0 {
+            let predicate = NSPredicate(format : "name containers[cd] %@", text!)
             fetchRequest.predicate = predicate
         }
-        do {
-            items = try context.fetch(fetchRequest)
-        } catch {
-            debugPrint("Could not load the items from CoreData")
-        }
-        return items
-    }
-    
-    func loadListItems(){
-        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
-        do {
+        do{
             cachedItems = try context.fetch(fetchRequest)
-        } catch {
-            debugPrint("Could not load the items from CoreData")
+        }catch{
+            debugPrint("could not load the items from CoreData")
         }
+        //        return items
     }
     
     // MARK: - Core Data stack
@@ -119,4 +112,4 @@ class DataManager {
         }
     }
     
-}
+}   

@@ -25,11 +25,14 @@ class ListViewController: UIViewController {
         searchBar.placeholder = "Search Item"
         
     }
-    //    func createItem(){
-    //        for item in items{
-    //            items2.append(Item(text: item))
-    //        }
-    //    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCategorie" {
+            let categoryController = segue.destination as! categoryController
+
+        }
+    }
+    
     @IBAction func addAction(_ sender: Any) {
         let alertController =  UIAlertController(title: "Doit", message: "New item", preferredStyle: .alert)
         
@@ -37,20 +40,35 @@ class ListViewController: UIViewController {
             textField.placeholder = "Name"
         }
         
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (action) in
+        }
+        
         let okAction = UIAlertAction(title: "Ok", style: .default){ (action) in
-            //let item = Item(text: alertController.textFields![0].text!)
+            let textField = alertController.textFields![0]
+            
+            if textField.text != "" {
+            
             let item = Item(context : DataManager.sharedInstance.persistentContainer.viewContext )
             item.name = alertController.textFields![0].text!
             item.checked = false
             DataManager.sharedInstance.cachedItems.append(item)
             DataManager.sharedInstance.saveListItems()
+            self.performSegue(withIdentifier: "showCategorie", sender: self)
+            
             self.resetSearchBar()
             self.tableView.reloadData()
+            }
+            
+        
+            
         }
         alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        //Placer l'ouverture de la popup içi
+        
         present(alertController, animated: true, completion: nil)
-    }
     
+}
     @IBAction func editAction(_ sender: Any) {
         //        let editButton = sender as! UIBarButtonItem
         //        editButton.se
@@ -68,15 +86,14 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
         return items2.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListViewCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListViewCellIdentifier", for: indexPath) as! CustomCell
         let item = items2[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.accessoryType = (item.checked) ? .checkmark : .none
-        let image = cell.imageView
+
+        cell.nameCell?.text = item.name
+        cell.descCell?.text = item.desc
         
         let badge = cell.viewWithTag(3)
         badge!.layer.cornerRadius = 5
-        
         return cell
     }
     
@@ -133,4 +150,8 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
     //    func updateSearchResults(for searchController: UISearchController) {
     //        filterContentForSearchText(searchController.searchBar.text!)
     //    }
-}
+} //UIView.animate(withDuration: 2) {
+
+
+    
+
