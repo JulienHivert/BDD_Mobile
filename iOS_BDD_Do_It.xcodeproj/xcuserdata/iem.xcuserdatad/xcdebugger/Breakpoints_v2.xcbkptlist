@@ -10,13 +10,185 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS_BDD_Do_It/categoryController.swift"
-            timestampString = "546332851.738274"
+            timestampString = "546357116.918565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "skip(_:)"
-            landmarkType = "7">
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_BDD_Do_It/categoryController.swift"
+            timestampString = "546357116.919135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_BDD_Do_It.categoryController.categories.getter : Swift.Array&lt;iOS_BDD_Do_It.Categorie&gt;"
+                  moduleName = "iOS_BDD_Do_It"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iem/SWIFT/BDD_Mobile/iOS_BDD_Do_It/categoryController.swift"
+                  timestampString = "546354965.356477"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_BDD_Do_It.categoryController.categories.setter : Swift.Array&lt;iOS_BDD_Do_It.Categorie&gt;"
+                  moduleName = "iOS_BDD_Do_It"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iem/SWIFT/BDD_Mobile/iOS_BDD_Do_It/categoryController.swift"
+                  timestampString = "546354965.358063"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_BDD_Do_It.categoryController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; iOS_BDD_Do_It.categoryController"
+                  moduleName = "iOS_BDD_Do_It"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iem/SWIFT/BDD_Mobile/iOS_BDD_Do_It/categoryController.swift"
+                  timestampString = "546354965.359643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_BDD_Do_It.categoryController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOS_BDD_Do_It.categoryController&gt;"
+                  moduleName = "iOS_BDD_Do_It"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iem/SWIFT/BDD_Mobile/iOS_BDD_Do_It/categoryController.swift"
+                  timestampString = "546354965.361062"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_BDD_Do_It/categoryController.swift"
+            timestampString = "546357116.919428"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_BDD_Do_It.categoryController.item.getter : Swift.Optional&lt;iOS_BDD_Do_It.Item&gt;"
+                  moduleName = "iOS_BDD_Do_It"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iem/SWIFT/BDD_Mobile/iOS_BDD_Do_It/categoryController.swift"
+                  timestampString = "546354965.36577"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_BDD_Do_It.categoryController.item.setter : Swift.Optional&lt;iOS_BDD_Do_It.Item&gt;"
+                  moduleName = "iOS_BDD_Do_It"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iem/SWIFT/BDD_Mobile/iOS_BDD_Do_It/categoryController.swift"
+                  timestampString = "546354965.367725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_BDD_Do_It.categoryController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; iOS_BDD_Do_It.categoryController"
+                  moduleName = "iOS_BDD_Do_It"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iem/SWIFT/BDD_Mobile/iOS_BDD_Do_It/categoryController.swift"
+                  timestampString = "546354965.370351"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "322">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOS_BDD_Do_It.categoryController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;iOS_BDD_Do_It.categoryController&gt;"
+                  moduleName = "iOS_BDD_Do_It"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iem/SWIFT/BDD_Mobile/iOS_BDD_Do_It/categoryController.swift"
+                  timestampString = "546354965.371906"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "269">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_BDD_Do_It/categoryController.swift"
+            timestampString = "546357116.91968"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

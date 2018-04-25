@@ -12,6 +12,7 @@ class DataManager {
     static let sharedInstance = DataManager()
     lazy var cachedItems = Array<Item>()
     //Demande de William pour rendre le code plus maintenable et réutilisable.
+    lazy var cachedCategories = Array<Categorie>()
     
     var documentDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -29,6 +30,7 @@ class DataManager {
     
     private init() {
         loadListItems()
+        initCategories()
     }
     
     func filter(searchText: String) -> Array<Item>{
@@ -39,7 +41,7 @@ class DataManager {
     
     func delete(item : Item){
         context.delete(item)
-        if let  index = cachedItems.index(where : { (anItem) -> Bool in
+        if let index = cachedItems.index(where : { (anItem) -> Bool in
             return(anItem === item)
         }){
             cachedItems.remove(at: index)
@@ -50,6 +52,31 @@ class DataManager {
     
     func saveListItems(){
         saveContext()
+    }
+    func initCategories() {
+        let cat1 = Categorie(context: context)
+        cat1.name = "orange"
+        cachedCategories.append(cat1)
+        
+        let cat2 = Categorie(context: context)
+        cat2.name = "yellow"
+        cachedCategories.append(cat2)
+        
+        let cat3 = Categorie(context: context)
+        cat3.name = "green"
+        cachedCategories.append(cat3)
+        
+        let cat4 = Categorie(context: context)
+        cat4.name = "purple"
+        cachedCategories.append(cat4)
+        
+        let cat5 = Categorie(context: context)
+        cat5.name = "blue"
+        cachedCategories.append(cat5)
+        
+        let cat6 = Categorie(context: context)
+        cat6.name = "black"
+        cachedCategories.append(cat6)
     }
     
     func loadListItems( with text: String? = ""){
@@ -71,26 +98,9 @@ class DataManager {
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-         */
         let container = NSPersistentContainer(name: "iOS_BDD_Do_it")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })

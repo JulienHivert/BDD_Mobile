@@ -28,7 +28,7 @@ class ListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCategorie" {
             let categoryController = segue.destination as! categoryController
-
+            categoryController.item = sender as! Item
         }
     }
     
@@ -38,8 +38,11 @@ class ListViewController: UIViewController {
         alertController.addTextField{ (textField) in
             textField.placeholder = "Name"
         }
+        alertController.addTextField{ (descField) in
+            descField.placeholder = "Description"
+        }
         
-        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { (action) in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
         }
         
         let okAction = UIAlertAction(title: "Ok", style: .default){ (action) in
@@ -50,16 +53,14 @@ class ListViewController: UIViewController {
             let item = Item(context : DataManager.sharedInstance.persistentContainer.viewContext )
             item.name = alertController.textFields![0].text!
             item.checked = false
+            item.desc = alertController.textFields![1].text!
             DataManager.sharedInstance.cachedItems.append(item)
             DataManager.sharedInstance.saveListItems()
-            self.performSegue(withIdentifier: "showCategorie", sender: self)
+            self.performSegue(withIdentifier: "showCategorie", sender: item)
             
             self.resetSearchBar()
             self.tableView.reloadData()
             }
-            
-        
-            
         }
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
@@ -89,9 +90,25 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
         let item = items2[indexPath.row]
         cell.nameCell?.text = item.name
         cell.descCell?.text = item.desc
+        //let nameCategorie = item.categorie?.name
         
-        let badge = cell.viewWithTag(3)
-        badge!.layer.cornerRadius = 5
+        switch (item.categorie?.name) {
+        case "orange"? :
+            cell.tagCell.backgroundColor = UIColor.orange
+        case "yellow"? :
+            cell.tagCell.backgroundColor = UIColor.yellow
+        case "green"? :
+            cell.tagCell.backgroundColor = UIColor.green
+        case "purple"? :
+            cell.tagCell.backgroundColor = UIColor.purple
+        case "blue"? :
+            cell.tagCell.backgroundColor = UIColor.blue
+        case "black"? :
+            cell.tagCell.backgroundColor = UIColor.black
+        default :
+            cell.tagCell.backgroundColor = UIColor.white
+        }
+        cell.tagCell?.layer.cornerRadius = 5
         return cell
     }
     
@@ -121,8 +138,8 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let itemIndex = DataManager.sharedInstance.cachedItems.index(where:{ $0 === items2[indexPath.item]})!
+        DataManager.sharedInstance.delete(item: items2[indexPath.item])
         items2.remove(at: indexPath.item)
-        DataManager.sharedInstance.cachedItems.remove(at: itemIndex)
         
         tableView.deleteRows(at: [indexPath], with: .automatic)
         DataManager.sharedInstance.saveListItems()
