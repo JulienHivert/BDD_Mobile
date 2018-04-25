@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,11 +92,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="navBar" id="GOf-eS-Rps">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Qpj-yp-zc3">
-                            <connections>
-                                <action selector="editAction:" destination="BYZ-38-t0r" id="nVf-q2-pIA"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="edit" id="Qpj-yp-zc3">
+                                <connections>
+                                    <action selector="editAction:" destination="BYZ-38-t0r" id="nVf-q2-pIA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="pDW-rS-pL2">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RfZ-WK-XCO">
+                                    <rect key="frame" x="56.5" y="7" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                                <connections>
+                                    <action selector="pickImage:" destination="BYZ-38-t0r" id="fOB-kd-ZSD"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Zbo-5h-Nv2">
                             <connections>
                                 <action selector="addAction:" destination="BYZ-38-t0r" id="S6N-Yj-vr4"/>

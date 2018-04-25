@@ -9,12 +9,13 @@
 import UIKit
 
 import UIKit
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var imageView: UIImageView!
     var items2 = Array<Item>()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,23 @@ class ListViewController: UIViewController {
         searchBar.placeholder = "Search Item"
         
     }
+    
+    @IBAction func pickImage(_ sender: Any) {
+        
+            let imagePicker = UIImagePickerController()
+            imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for:.photoLibrary)!
+            
+            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+                print("can't open photo library")
+                return
+            }
+            
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            
+            present(imagePicker, animated: true)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCategorie" {
