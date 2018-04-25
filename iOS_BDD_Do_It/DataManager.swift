@@ -54,6 +54,13 @@ class DataManager {
         saveContext()
     }
     func initCategories() {
+//        let ud = UserDefaults.standard
+//        if ud != nil{
+//            ud.set(true, forKey: "DidCreateCat")
+//            ud.bool(forKey: "DidCreateCat")
+//        }
+//        else {
+        
         let cat1 = Categorie(context: context)
         cat1.name = "orange"
         cachedCategories.append(cat1)
@@ -77,6 +84,7 @@ class DataManager {
         let cat6 = Categorie(context: context)
         cat6.name = "black"
         cachedCategories.append(cat6)
+        //}
     }
     
     func loadListItems( with text: String? = ""){
