@@ -24,11 +24,14 @@ class ListViewController: UIViewController {
         searchBar.placeholder = "Search Item"
         
     }
-    //    func createItem(){
-    //        for item in items{
-    //            items2.append(Item(text: item))
-    //        }
-    //    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCategorie" {
+            let categoryController = segue.destination as! categoryController
+
+        }
+    }
+    
     @IBAction func addAction(_ sender: Any) {
         let alertController =  UIAlertController(title: "Doit", message: "New item", preferredStyle: .alert)
         
@@ -46,6 +49,7 @@ class ListViewController: UIViewController {
             item.checked = false
             DataManager.sharedInstance.cachedItems.append(item)
             DataManager.sharedInstance.saveListItems()
+            self.performSegue(withIdentifier: "showCategorie", sender: self)
             
             self.resetSearchBar()
             self.tableView.reloadData()
@@ -53,6 +57,8 @@ class ListViewController: UIViewController {
             
         }
         alertController.addAction(okAction)
+        //Placer l'ouverture de la popup içi
+        
         present(alertController, animated: true, completion: nil)
     
 }
@@ -133,4 +139,8 @@ extension ListViewController : UITableViewDataSource, UITableViewDelegate, UISea
     //    func updateSearchResults(for searchController: UISearchController) {
     //        filterContentForSearchText(searchController.searchBar.text!)
     //    }
-}
+} //UIView.animate(withDuration: 2) {
+
+
+    
+
