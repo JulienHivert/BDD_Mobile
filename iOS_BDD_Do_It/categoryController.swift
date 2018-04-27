@@ -29,16 +29,28 @@ class categoryController: UIViewController {
 		switch sender {
 		case orangeButton:
 			item?.categorie = categories[0]
+			onBackToList()
+			break
 		case yellowButton:
 			item?.categorie = categories[1]
+			onBackToList()
+			break
 		case greenButton:
 			item?.categorie = categories[2]
+			onBackToList()
+			break
 		case purpleButton:
 			item?.categorie = categories[3]
+			onBackToList()
+			break
 		case blueButton:
 			item?.categorie = categories[4]
+			onBackToList()
+			break
 		case blackButton:
 			item?.categorie = categories[5]
+			onBackToList()
+			break
 		default:
 			onBackToList()
 			break
